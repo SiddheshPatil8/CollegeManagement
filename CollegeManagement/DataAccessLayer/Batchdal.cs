@@ -54,6 +54,7 @@ namespace CollegeManagement.DataAccessLayer
             con.ExecuteNonQuery();
             conn.Close();
         }
+<<<<<<< HEAD
 
         public void DeleteInfoDAL(int Batch_Id)
         {
@@ -64,5 +65,7 @@ namespace CollegeManagement.DataAccessLayer
             con.ExecuteNonQuery();
             conn.Close();
         }
+=======
+>>>>>>> 9215d4a5faf17b6fb2f1ec91ad20f597dbf695b6
     }
 }

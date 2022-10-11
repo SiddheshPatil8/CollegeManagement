@@ -16,7 +16,11 @@ MyApp.controller("BatchController", function ($scope, $http) {
                 alert(a);
             }).error(function () {
                 alert("Failed");
+<<<<<<< HEAD
             });
+=======
+            })
+>>>>>>> 9215d4a5faf17b6fb2f1ec91ad20f597dbf695b6
         }
         else {
             $scope.btnSaveText = "Updating.....";
@@ -25,13 +29,23 @@ MyApp.controller("BatchController", function ($scope, $http) {
                 url: '/Batch/Update_Info',
                 data: $scope.BatchDataObject
             }).success(function (a) {
+<<<<<<< HEAD
                 $scope.btnSaveText = "Save";
+=======
+                $scope.btnSaveText = "Update";
+>>>>>>> 9215d4a5faf17b6fb2f1ec91ad20f597dbf695b6
                 $scope.BatchDataObject = null;
                 alert(a);
             }).error(function () {
                 alert("Failed");
+<<<<<<< HEAD
             });
         }
+=======
+            })
+        }
+
+>>>>>>> 9215d4a5faf17b6fb2f1ec91ad20f597dbf695b6
     };
 
     $http.get("/Batch/Load_Data").then(function (d) {
