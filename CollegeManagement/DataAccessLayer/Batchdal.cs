@@ -43,5 +43,16 @@ namespace CollegeManagement.DataAccessLayer
             da.Fill(dss);
             return dss;
         }
+
+        public void UpdateInfoDAL(BatchDataObject aDao)
+        {
+            SqlCommand con = new SqlCommand("sp_Update_BatchByMasterId", conn);
+            con.CommandType = CommandType.StoredProcedure;
+            con.Parameters.AddWithValue("@Batch_Id", aDao.Batch_Id);
+            con.Parameters.AddWithValue("@BName", aDao.BName);
+            conn.Open();
+            con.ExecuteNonQuery();
+            conn.Close();
+        }
     }
 }
