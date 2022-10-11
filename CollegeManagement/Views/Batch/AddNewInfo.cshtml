@@ -3,9 +3,7 @@
     ViewBag.Title = "AddNewInfo";
 }
 
-<h2>AddNewInfo</h2>
-
-<div ng-app="CMSApp" ng-controller="BatchController">
+<div ng-app="CMSApp" ng-controller="BatchController" data-ng-init="GetOneRecord(@Convert.ToInt32(Request.QueryString["MasterId"]))">
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">

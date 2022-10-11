@@ -18,7 +18,7 @@ namespace CollegeManagement.Controllers
             return View();
         }
 
-        public ActionResult AddNewInfo()
+        public ActionResult AddNewInfo(int? MasterId)
         {
             return View();
         }
@@ -36,6 +36,21 @@ namespace CollegeManagement.Controllers
                 Mes = "Operation Failed";
             }
             return Json(Mes,JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult Update_Info(BatchDataObject aDao)
+        {
+            string Mes = "";
+            try
+            {
+                aDal.UpdateInfoDAL(aDao);
+                Mes = "Operation Successfull!!!";
+            }
+            catch (Exception ex)
+            {
+                Mes = "Operation Failed";
+            }
+            return Json(Mes, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult Load_Data()
@@ -67,6 +82,21 @@ namespace CollegeManagement.Controllers
                 });
             }
             return Json(lists, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult RemoveDataByMasterId(int Batch_Id)
+        {
+            string result = string.Empty;
+            try
+            {
+                aDal.DeleteInfoDAL(Batch_Id);
+                result = "Operation Deleted";
+            }
+            catch(Exception ex)
+            {
+                result = "Operation Failed";
+            }
+            return Json(result, JsonRequestBehavior.AllowGet);
         }
     }
 }
